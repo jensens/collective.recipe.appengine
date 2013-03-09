@@ -89,7 +89,7 @@ class Recipe(zc.recipe.egg.Scripts):
         defaults = {
             'sdk-directory': join(self.parts_dir, 'google_appengine'),
             'config-file':   join(self.buildout_dir, 'gaetools.cfg'),
-            'interpreter':   'python',
+            'interpreter':   'python-appengine',
             'extra-paths':   '',
             'eggs':          '',
         }

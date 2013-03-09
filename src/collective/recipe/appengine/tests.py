@@ -10,6 +10,7 @@ from zope.testing import renormalizing
 TESTFILES = [
     'sdk.rst',
     'applib.rst',
+    'tools.rst'
 ]
 optionflags = doctest.NORMALIZE_WHITESPACE | \
               doctest.ELLIPSIS | \
