@@ -76,13 +76,18 @@ BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(
     os.path.abspath(os.path.realpath(__file__))))))
 
 
-LIB_README = """Warning!
-========
+LIB_README = """\
+WARNING!!!
+==========
 
-This directory is removed every time the buildout tool runs, so don't place
-or edit things here because any changes will be lost!
+DO NOT PLACE OR EDIT FILES IN HERE!
 
-Use a different directory for extra libraries instead of this one."""
+ANY CHANGES WILL GOT LOST!
+
+Reason: This directory is REMOVED every time the buildout tool runs.
+
+Use a different directory for extra libraries instead of this one.
+"""
 
 
 class Recipe(Scripts):
@@ -163,9 +168,9 @@ class Recipe(Scripts):
                 logger=self.logger)
 
         # Save README.
-        f = open(os.path.join(tmp_dir, 'README.txt'), 'w')
-        f.write(LIB_README)
-        f.close()
+        with open(os.path.join(tmp_dir, 'ATTENTION_DO_NOT_EDIT_IN_HERE.txt'),
+                  'w') as f:
+            f.write(LIB_README)
 
         if self.use_zip:
             # Zip file and remove temporary dir.

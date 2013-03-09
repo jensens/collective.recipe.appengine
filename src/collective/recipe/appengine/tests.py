@@ -19,7 +19,7 @@ optionflags = doctest.NORMALIZE_WHITESPACE | \
 def setUp(test):
     zc.buildout.tests.easy_install_SetUp(test)
     zc.buildout.testing.install('hexagonit.recipe.download', test)
-    zc.buildout.testing.install('webtest', test)
+    zc.buildout.testing.install('interlude', test)
     zc.buildout.testing.install_develop('collective.recipe.appengine', test)
 
 
