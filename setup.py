@@ -19,6 +19,8 @@ def get_readme():
 
     return '\n\n\n'.join(content)
 
+tests_require = ['interlude', 'zc.buildout[test]']
+
 setup(
     name='collective.recipe.appengine',
     version=version,
@@ -38,6 +40,11 @@ setup(
         'zc.recipe.egg>=2.0.0.a3',
         'hexagonit.recipe.download',
     ],
+    tests_require=tests_require,
+    test_suite="collective.recipe.appengine.tests.test_suite",
+    extras_require=dict(
+        test=tests_require,
+    ),
     entry_points={
         'zc.buildout': [
             'default = collective.recipe.appengine.tools:Recipe',
