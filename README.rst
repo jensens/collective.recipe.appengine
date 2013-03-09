@@ -97,9 +97,9 @@ Example
 
 ::
 
-  [applib]
+  [appengine_libs]
   # Sets the library dependencies for the app.
-  recipe = collective.recipe.appengine:app slib
+  recipe = collective.recipe.appengine:applib
   lib-directory = app/distlib
   use-zipimport = false
 
@@ -146,7 +146,7 @@ Options
 sdk-directory
     Path to the App Engine SDK directory. It can be an
     absolute path or a reference to the `collective.recipe.appengine:sdk` destination
-    option. Default is `${buildout:parts-directory}/google_appengine`.
+    option. Default is ``${buildout:parts-directory}/appengine_sdk``.
 appcfg-script
     Name of the appcfg script to be installed in the bin
     directory.. Default is `appcfg`.

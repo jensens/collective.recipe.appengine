@@ -8,6 +8,7 @@ Version 1.0
   hexagonit.recipe.download and removed copied code,
   make it work with zc.buildout >=2.0.1,
   create target-directory for applib if not exist.
+  default under parts to appengine_sdk.
   Forked from appfy.recipe.gae
   [jensens, 2013-03-09]
 

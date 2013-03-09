@@ -87,7 +87,7 @@ class Recipe(zc.recipe.egg.Scripts):
         # Set default values.
         join = os.path.join
         defaults = {
-            'sdk-directory': join(self.parts_dir, 'google_appengine'),
+            'sdk-directory': join(self.parts_dir, 'appengine_sdk'),
             'config-file':   join(self.buildout_dir, 'gaetools.cfg'),
             'interpreter':   'python-appengine',
             'extra-paths':   '',
