@@ -42,9 +42,13 @@ Downloads and installs the App Engine SDK in the buildout directory.
 Options
 ^^^^^^^
 
-:url: URL to the App Engine SDK file.
-:destination: Destination of the extracted SDK. Default is the parts directory.
-:clear-destination: If `true`, deletes the destination dir before
+url
+    URL to the App Engine SDK file.
+destination
+    Destination of the extracted SDK. Default is the section-name in the parts
+    directory.
+clear-destination
+    If `true`, deletes the destination dir before
     extracting the download. Default is `true`.
 
 Example
@@ -55,10 +59,7 @@ Example
   [appengine_sdk]
   # Dowloads and extracts the App Engine SDK.
   recipe = collective.recipe.appengine:sdk
-  url = http://googleappengine.googlecode.com/files/google_appengine_1.3.5.zip
-  destination = ${buildout:parts-directory}
-  hash-name = false
-  clear-destination = true
+  url = http://googleappengine.googlecode.com/files/google_appengine_1.7.5.zip
 
 collective.recipe.appengine:applib
 ----------------------------------
@@ -98,7 +99,7 @@ Example
 
   [applib]
   # Sets the library dependencies for the app.
-  recipe = collective.recipe.appengine:applib
+  recipe = collective.recipe.appengine:app slib
   lib-directory = app/distlib
   use-zipimport = false
 
@@ -142,22 +143,30 @@ so all the options from that recipe are also valid.
 Options
 ^^^^^^^
 
-:sdk-directory: Path to the App Engine SDK directory. It can be an
+sdk-directory
+    Path to the App Engine SDK directory. It can be an
     absolute path or a reference to the `collective.recipe.appengine:sdk` destination
     option. Default is `${buildout:parts-directory}/google_appengine`.
-:appcfg-script: Name of the appcfg script to be installed in the bin
+appcfg-script
+    Name of the appcfg script to be installed in the bin
     directory.. Default is `appcfg`.
-:bulkload_client-script: Name of the bulkloader script to be installed in
+bulkload_client-script
+    Name of the bulkloader script to be installed in
     the bin directory. Default is `bulkload_client`.
-:bulkloader-script: Name of the bulkloader script to be installed in
+bulkloader-script
+    Name of the bulkloader script to be installed in
     the bin directory. Default is `bulkloader`.
-:dev_appserver-script: Name of the dev_appserver script to be installed in
+dev_appserver-script
+    Name of the dev_appserver script to be installed in
     the bin directory. Default is `dev_appserver`.
-:remote_api_shell-script: Name of the remote_api_shell script to be
+remote_api_shell-script
+    Name of the remote_api_shell script to be
     installed in the bin directory. Default is `remote_api_shell`.
-:config-file: Configuration file with the default values to use in
+config-file
+    Configuration file with the default values to use in
     scripts. Default is `appenginetools.cfg`.
-:extra-paths: Extra paths to include in sys.path for generated scripts.
+extra-paths
+    Extra paths to include in sys.path for generated scripts.
 
 Example
 ^^^^^^^
