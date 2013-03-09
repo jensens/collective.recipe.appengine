@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-collective.recipe.gae:tools
+collective.recipe.appengine:tools
 ----------------------
 
 Installs a python executable and several SDK scripts in the buildout
@@ -16,8 +16,8 @@ Options
 ~~~~~~~
 
 :sdk-directory: Path to the App Engine SDK directory. It can be an
-    absolute path or a reference to the `collective.recipe.gae:sdk` destination
-    option. Default is `${buildout:parts-directory}/google_appengine`.
+    absolute path or a reference to the `collective.recipe.appengine:sdk`
+    destination option. Default is `${buildout:parts-directory}/appengine_sdk`.
 :appcfg-script: Name of the appcfg script to be installed in the bin
     directory.. Default is `appcfg`.
 :bulkload_client-script: Name of the bulkloader script to be installed in
@@ -37,17 +37,17 @@ Example
 
 ::
 
-  [gae_tools]
+  [appengine_tools]
   # Installs appcfg, dev_appserver and python executables in the bin directory.
-  recipe = collective.recipe.gae:tools
-  sdk-directory = ${gae_sdk:destination}/google_appengine
+  recipe = collective.recipe.appengine:tools
+  sdk-directory = ${appengine_sdk:destination}
 
   # Add these paths to sys.path in the generated scripts.
   extra-paths =
       app/lib
       app/distlib
 
-Note that this example references an `gae_sdk` section from the
+Note that this example references an `appengine_sdk` section from the
 `collective.recipe.gae:sdk` example. An absolute path could also be used.
 
 To set default values to start the dev_appserver, create a section
@@ -120,8 +120,9 @@ class Recipe(zc.recipe.egg.Scripts):
 
     def install(self):
         """Creates the scripts."""
-        entry_points =['%s=collective.recipe.gae.scripts:%s' % (scriptname,
-            function) for function, scriptname in self.scripts]
+        entry_points = ['%s=collective.recipe.appengine.scripts:%s' %
+                        (scriptname, function)
+                        for function, scriptname in self.scripts]
 
         if self.use_rel_paths is not True:
             # base won't be set if we are using absolute paths.
