@@ -48,7 +48,7 @@ Example
       app/distlib
 
 Note that this example references an `appengine_sdk` section from the
-`collective.recipe.gae:sdk` example. An absolute path could also be used.
+`collective.recipe.appengine:sdk` example. An absolute path could also be used.
 
 To set default values to start the dev_appserver, create a section
 `dev_appserver` in the defined configuration file (`gaetools.cfg` by
@@ -58,7 +58,7 @@ default). For example::
   # Set default values to start the dev_appserver. All options from the
   # command line are allowed. They are inserted at the beginning of the
   # arguments. Values are used as they are; don't use variables here.
-  recipe = collective.recipe.gae:tools
+  recipe = collective.recipe.appengine:tools
   defaults =
       --datastore_path=var/data.store
       --history_path=var/history.store
