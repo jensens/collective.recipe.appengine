@@ -21,11 +21,13 @@ Recipes are split up into three tasks to be used in own sections:
 ``collective.recipe.appengine:tools``
     Installs a python executable and several SDK
     scripts in the buildout directory:
+
     - appcfg,
     - bulkload_client,
     - bulkloader,
     - dev_appserver
     - remote_api_shell.
+
     It also allows to set default values to start the dev_appserver.
 
 Source code and issue tracker can be found at
