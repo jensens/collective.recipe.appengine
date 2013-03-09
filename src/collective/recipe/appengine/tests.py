@@ -9,6 +9,7 @@ from zope.testing import renormalizing
 
 TESTFILES = [
     'sdk.rst',
+    'applib.rst',
 ]
 optionflags = doctest.NORMALIZE_WHITESPACE | \
               doctest.ELLIPSIS | \
@@ -18,6 +19,7 @@ optionflags = doctest.NORMALIZE_WHITESPACE | \
 def setUp(test):
     zc.buildout.tests.easy_install_SetUp(test)
     zc.buildout.testing.install('hexagonit.recipe.download', test)
+    zc.buildout.testing.install('webtest', test)
     zc.buildout.testing.install_develop('collective.recipe.appengine', test)
 
 

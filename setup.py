@@ -50,7 +50,7 @@ setup(
             'default = collective.recipe.appengine.tools:Recipe',
             'tools = collective.recipe.appengine.tools:Recipe',
             'sdk = collective.recipe.appengine.sdk:Recipe',
-            'app_lib = collective.recipe.appengine.app_lib:Recipe',
+            'applib = collective.recipe.appengine.applib:Recipe',
         ],
     },
     classifiers=[

@@ -1,5 +1,4 @@
 import fnmatch
-import os
 import shutil
 import zipfile
 import hashlib
@@ -21,10 +20,10 @@ def get_checksum(path, hashtype='sha1'):
 
     f = open(path, 'rb')
     try:
-        chunk = f.read(2**16)
+        chunk = f.read(2 ** 16)
         while chunk:
             checksum.update(chunk)
-            chunk = f.read(2**16)
+            chunk = f.read(2 ** 16)
 
         return checksum.hexdigest()
     finally:

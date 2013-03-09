@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-collective.recipe.gae:app_lib
+collective.recipe.gae:applib
 ------------------------
 Downloads libraries from PyPi and installs in the app directory. This recipe
 extends `zc.recipe.egg.Scripts <http://pypi.python.org/pypi/zc.recipe.egg>`_,
@@ -30,9 +30,9 @@ Example
 
 ::
 
-  [app_lib]
+  [applib]
   # Sets the library dependencies for the app.
-  recipe = collective.recipe.gae:app_lib
+  recipe = collective.recipe.gae:applib
   lib-directory = app/distlib
   use-zipimport = false
 
@@ -65,14 +65,12 @@ import os
 import shutil
 import tempfile
 import uuid
-
-#import zc.recipe.egg
-from zc.recipe.egg.scripts import ScriptBase
-
-from collective.recipe import (copytree, ignore_patterns, include_patterns,
-    rmfiles, zipdir)
-#from collective.recipe.archive_util import unpack_archive
-
+from zc.recipe.egg import Scripts
+from .utils import (
+    copytree,
+    ignore_patterns,
+    zipdir,
+)
 
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(
     os.path.abspath(os.path.realpath(__file__))))))
@@ -132,7 +130,6 @@ class Recipe(Scripts):
     def install_in_app_dir(self, paths):
         # Delete old libs.
         self.delete_libs()
-
         if self.use_zip:
             # Create temporary directory for the zip files.
             tmp_dir = os.path.join(tempfile.gettempdir(), uuid.uuid4().hex)
@@ -141,6 +138,9 @@ class Recipe(Scripts):
 
         if not os.path.exists(tmp_dir):
             os.mkdir(tmp_dir)
+
+        if not os.path.exists(self.lib_path):
+            os.mkdir(self.lib_path)
 
         # Copy all files.
         for name, src in paths:
