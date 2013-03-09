@@ -9,4 +9,5 @@ class Recipe(HRDRecipe):
         options.setdefault('destination', os.path.join(parts_dir, name))
         options.setdefault('clear-destination', 'true')
         options.setdefault('download-only', 'false')
+        options.setdefault('strip-top-level-dir', 'true')
         super(Recipe, self).__init__(buildout, name, options)
