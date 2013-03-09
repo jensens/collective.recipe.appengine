@@ -13,12 +13,12 @@ inspired by
 
 Recipes are split up into three tasks to be used in own sections:
 
-```collective.recipe.appengine:sdk```
+``collective.recipe.appengine:sdk``
     Downloads and installs the App Engine SDK.
-```collective.recipe.appengine:applib```
+``collective.recipe.appengine:applib``
     Downloads libraries from PyPi and installs in
     the app directory.
-```collective.recipe.appengine:tools```
+``collective.recipe.appengine:tools``
     Installs a python executable and several SDK
     scripts in the buildout directory:
     - appcfg,
