@@ -1,5 +1,5 @@
-collective.recipe.appengine
-===========================
+Appengine Recipe for Buildout
+=============================
 
 ```collective.recipe.appengine``` provides a series of
 `zc.buildout <http://pypi.python.org/pypi/zc.buildout>`_
