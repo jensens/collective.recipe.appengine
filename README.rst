@@ -1,7 +1,7 @@
 Appengine Recipe for Buildout
 =============================
 
-```collective.recipe.appengine``` provides a series of
+``collective.recipe.appengine`` provides a series of
 `zc.buildout <http://pypi.python.org/pypi/zc.buildout>`_
 recipes to help with `Google App Engine <http://code.google.com/appengine/>`_
 python development.
@@ -69,18 +69,24 @@ so all the options from that recipe are also valid.
 Options
 ^^^^^^^
 
-:eggs: Package names to be installed.
-:lib-directory: Destination directory for the libraries. Default is
-    `distlib`.
-:use-zipimport: If `true`, a zip file with the libraries is created
+eggs
+    Package names to be installed.
+lib-directory
+    Destination directory for the libraries. Default is
+    distlib.
+use-zipimport
+    If `true`, a zip file with the libraries is created
     instead of a directory. The zip filename will be the value of
     `lib-directory` plus `.zip`.
-:ignore-globs: A list of glob patterns to not be copied from the library.
-:ignore-packages: A list of top-level package names or modules to be ignored.
+ignore-globs
+    A list of glob patterns to not be copied from the library.
+ignore-packages
+    A list of top-level package names or modules to be ignored.
     This is useful to ignore dependencies that won't be used. Some packages may
     install distribute, setuptools or pkg_resources but these are not very
     useful on App Engine, so you can set them to be ignored, for example.
-:delete-safe: If `true`, always move `lib-directory` to a temporary directory
+delete-safe
+    If `true`, always move `lib-directory` to a temporary directory
     inside the parts dir as a backup when building, instead of deleting it.
     This is to avoid accidental deletion if `lib-directory` is badly
     configured. Default to `true`.
@@ -90,9 +96,9 @@ Example
 
 ::
 
-  [app_lib]
+  [applib]
   # Sets the library dependencies for the app.
-  recipe = collective.recipe.appengine:app_lib
+  recipe = collective.recipe.appengine:applib
   lib-directory = app/distlib
   use-zipimport = false
 

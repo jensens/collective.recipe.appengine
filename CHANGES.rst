@@ -1,5 +1,16 @@
 Versions
 ========
+
+Version 1.0
+-----------
+
+- cleanup, added integrated buildout and tests, depend on 
+  hexagonit.recipe.download and removed copied code,
+  make it work with zc.buildout >=2.0.1,
+  create target-directory for applib if not exist.
+  Forked from appfy.recipe.gae
+  [jensens, 2013-03-09]
+
 Version 0.9.1 - November 27, 2010
 ---------------------------------
 - Readded option 'clear-destination' to the dowanlod recipe, true by default.
