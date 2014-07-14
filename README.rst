@@ -7,7 +7,7 @@ recipes to help with `Google App Engine <http://code.google.com/appengine/>`_
 python development.
 
 This is a fork of
-`appfy.recipe.appengine <http://code.google.com/p/appfy/>`_, which itself was
+`appfy.recipe.appengine <https://github.com/prmtl/appfy.recipe.gae>`_, which itself was
 inspired by
 `rod.recipe.appengine <http://pypi.python.org/pypi/rod.recipe.appengine>`_.
 
